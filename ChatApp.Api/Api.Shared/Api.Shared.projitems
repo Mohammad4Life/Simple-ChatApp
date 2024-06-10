@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>0a026bd8-467d-4b0f-8a4b-f2f6e70d6699</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Api.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)ModelDTOs\ApplicationUsers\Queries\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ModelDTOs\Contacts\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ModelDTOs\Conversations\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ModelDTOs\Messages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ModelDTOs\ProfilePhotos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\AccountCreationState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\ApplicationUsers\Commands\RegisterPhoneNumberRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\ApplicationUsers\Commands\RegisterPhoneNumberResponse.cs" />
+  </ItemGroup>
+</Project>
