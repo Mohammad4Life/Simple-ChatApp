@@ -17,7 +17,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Enums\AccountCreationState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\ApplicationUsers\Commands\AddAcountDetailsRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\ApplicationUsers\Commands\AddAcountDetailsResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\ApplicationUsers\Commands\CreateAccountRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\ApplicationUsers\Commands\CreateAccountResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\ApplicationUsers\Commands\RegisterPhoneNumberRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\ApplicationUsers\Commands\RegisterPhoneNumberResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\ApplicationUsers\Commands\VerifyPhoneNumberRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\ApplicationUsers\Commands\VerifyPhoneNumberResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\SmsProvider.cs" />
   </ItemGroup>
 </Project>

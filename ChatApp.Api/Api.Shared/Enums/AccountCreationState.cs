@@ -2,11 +2,11 @@
 
 public enum AccountCreationState
 {
-    NumberProvision = 1,
+    NumberProvided = 1,
 
-    NumberVerification = 2,
+    NumberVerifided = 2,
 
-    DetailProvision = 3,
+    DetailProvided = 3,
 
     AccountCreated = 4
 }
