@@ -35,5 +35,6 @@ public class SmsProvider : ISmsProvider
         await api.Send("", PhoneNumber, Message);
 
         return true;
+
     }
 }
