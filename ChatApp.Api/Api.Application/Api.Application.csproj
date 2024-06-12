@@ -11,7 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\ApplicationUsers\Commands\" />
     <Folder Include="Services\ApplicationUsers\Queries\" />
   </ItemGroup>
 

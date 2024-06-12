@@ -1,11 +1,12 @@
-﻿using Kavenegar;
+﻿using Api.DataAccess.Utils;
+using Kavenegar;
 using Microsoft.Extensions.Logging;
 
 namespace Api.Shared.Services;
 
 public interface ISmsProvider
 {
-    Task<bool> SendVerificationCode(string PhoneNumber);
+    Task<bool> SendVerificationCode(string VerificationCode, string PhoneNumber);
 }
 
 public class SmsProvider : ISmsProvider
@@ -16,23 +17,15 @@ public class SmsProvider : ISmsProvider
         _logger = logger;
     }
 
-    public async Task<bool> SendVerificationCode(string PhoneNumber)
+    public async Task<bool> SendVerificationCode(string VerificationCode, string PhoneNumber)
     {
-        string verificationCode = string.Empty;
-        for(int i = 0; i < 6; i++)
-        {
-            Random rng = new Random();
-            int num = rng.Next(0, 10);
-            verificationCode = verificationCode + num.ToString();
-        }
-
-        string Message = $"با سلام کد زیر جهت احراز هویت شما ارسال شده است. لطفا آن را در اختیار کس دیگری قرار ندهید.\n{verificationCode}";
+        string Message = $"با سلام کد زیر جهت احراز هویت شما ارسال شده است. لطفا آن را در اختیار کس دیگری قرار ندهید.\n{VerificationCode}";
 
         //Pass the sms system token later when you bought kavenegar dashboard.
-        Kavenegar.KavenegarApi api = new KavenegarApi("");
+        Kavenegar.KavenegarApi api = new KavenegarApi(StaticVariables.SmsApiKey);
 
         //Pass the sender number later when you bought kavenegar dashboard.
-        await api.Send("", PhoneNumber, Message);
+        await api.Send(StaticVariables.SmsSender, PhoneNumber, Message);
 
         return true;
 
