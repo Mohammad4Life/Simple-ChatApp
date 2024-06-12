@@ -22,4 +22,11 @@ public class ApplicationUserController : BaseController
     {
         return ApiResponse<RegisterPhoneNumberResponse>.Success(await _mediator.Send(new RegisterPhoneNumberCommand(request, cancellationToken)));
     }
+
+    [HttpPost]
+    [Route(nameof(VerifyPhoneNumber))]
+    public async Task<ApiResponse<VerifyPhoneNumberResponse>> VerifyPhoneNumber(VerifyPhoneNumberRequest request, CancellationToken cancellationToken)
+    {
+        return ApiResponse<VerifyPhoneNumberResponse>.Success(await _mediator.Send(new VerifyPhoneNumberCommand(request, cancellationToken)));
+    }
 }

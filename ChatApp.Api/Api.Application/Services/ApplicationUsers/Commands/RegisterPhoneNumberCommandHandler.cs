@@ -14,13 +14,13 @@ public class RegisterPhoneNumberCommandHandler : IRequestHandler<RegisterPhoneNu
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly UserManager<ApplicationUser> _userManager;
-    private readonly RandomVerificationCodeGenerator _generator;
+    //private readonly RandomVerificationCodeGenerator _generator;
     public readonly ISmsProvider _smsProvider;
-    public RegisterPhoneNumberCommandHandler(IUnitOfWork unitOfWork, UserManager<ApplicationUser> userManager, RandomVerificationCodeGenerator generator, ISmsProvider smsProvider)
+    public RegisterPhoneNumberCommandHandler(IUnitOfWork unitOfWork, UserManager<ApplicationUser> userManager, /*RandomVerificationCodeGenerator*/ /*generator*/, ISmsProvider smsProvider)
     {
         _unitOfWork = unitOfWork;
         _userManager = userManager;
-        _generator = generator;
+        //_generator = generator;
 
     }
 
@@ -36,11 +36,13 @@ public class RegisterPhoneNumberCommandHandler : IRequestHandler<RegisterPhoneNu
                 
                 applicationUser.PhoneNumber = request.Command.PhoneNumber;
 
-                string verificationCode = _generator.GenerateVerificationCode();
+                string verificationCode = RandomVerificationCodeGenerator.GenerateVerificationCode();
                 
                 applicationUser.VerificationCode = verificationCode;
 
                 await _userManager.CreateAsync(applicationUser);
+
+                await _userManager.AddToRoleAsync(applicationUser, "User");
                 
                 await _unitOfWork.CommitAsync(cancellationToken);
 
@@ -50,7 +52,7 @@ public class RegisterPhoneNumberCommandHandler : IRequestHandler<RegisterPhoneNu
             }
             else
             {
-                string verificationCode = _generator.GenerateVerificationCode();
+                string verificationCode = RandomVerificationCodeGenerator.GenerateVerificationCode();
 
                 user.VerificationCode = verificationCode;
 

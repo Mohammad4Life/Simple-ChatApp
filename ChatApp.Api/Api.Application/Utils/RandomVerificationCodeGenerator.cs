@@ -1,8 +1,8 @@
 ﻿namespace Api.Application.Utils;
 
-public class RandomVerificationCodeGenerator
+public static class RandomVerificationCodeGenerator
 {
-    public string GenerateVerificationCode(int Length = 6)
+    public static  string GenerateVerificationCode(int Length = 6)
     {
         string verificationCode = string.Empty;
         for (int i = 0; i < Length; i++)

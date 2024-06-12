@@ -1,3 +1,4 @@
+using Api.Application.ExtentionMethods;
 using Api.DataAccess.Context;
 using Api.DataAccess.DomainRepository;
 using Microsoft.EntityFrameworkCore;
@@ -18,8 +19,12 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
 });
 #endregion
 
+#region MediatorEntry Point
+builder.Services.AddApplication();
+#endregion
+
 #region UnitOfWork
-builder.Services.AddScoped<IApplicationUserRepository, ApplicationUserRepository>();
+
 #endregion
 
 var app = builder.Build();
