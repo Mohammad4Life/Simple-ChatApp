@@ -10,7 +10,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ModelDTOs\ApplicationUsers\Queries\" />
-    <Folder Include="$(MSBuildThisFileDirectory)ModelDTOs\Contacts\" />
     <Folder Include="$(MSBuildThisFileDirectory)ModelDTOs\Conversations\" />
     <Folder Include="$(MSBuildThisFileDirectory)ModelDTOs\Messages\" />
     <Folder Include="$(MSBuildThisFileDirectory)ModelDTOs\ProfilePhotos\" />
