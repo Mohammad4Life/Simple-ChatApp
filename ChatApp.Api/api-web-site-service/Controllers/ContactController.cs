@@ -29,4 +29,11 @@ public class ContactController : BaseController
     {
         return ApiResponse<UpdateContactResponse>.Success(await _mediator.Send(new UpdateContactCommand(request, cancellationToken)));
     }
+
+    [HttpPost]
+    [Route(nameof(DeleteContact))]
+    public async Task<ApiResponse<DeleteContactResponse>> DeleteContact(DeleteContactRequest request, CancellationToken cancellationToken)
+    {
+        return ApiResponse<DeleteContactResponse>.Success(await _mediator.Send(new DeleteContactCommand(request, cancellationToken)));
+    }
 }

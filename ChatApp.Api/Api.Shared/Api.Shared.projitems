@@ -26,6 +26,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\ApplicationUsers\Commands\VerifyPhoneNumberResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\Contacts\Commands\AddNewContactRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\Contacts\Commands\AddNewContactResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\Contacts\Commands\DeleteContactRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\Contacts\Commands\DeleteContactResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\Contacts\Commands\UpdateContactRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\Contacts\Commands\UpdateContactResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\SmsProvider.cs" />
