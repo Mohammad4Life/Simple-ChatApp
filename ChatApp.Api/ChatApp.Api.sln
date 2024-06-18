@@ -12,6 +12,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api-web-site-service", "api-web-site-service\api-web-site-service.csproj", "{48FFAE14-A0A4-403F-A8FE-DED3B265568C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StoredProcedures", "StoredProcedures", "{343BD5F7-0DDD-4681-AF63-540CA49DAFFF}"
+	ProjectSection(SolutionItems) = preProject
+		GetAllContacts.sql = GetAllContacts.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
