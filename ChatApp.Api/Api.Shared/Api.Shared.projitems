@@ -30,6 +30,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\Contacts\Commands\DeleteContactResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\Contacts\Commands\UpdateContactRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\Contacts\Commands\UpdateContactResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\Contacts\Queries\GetAllContactsRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\Contacts\Queries\GetAllContactsResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\SmsProvider.cs" />
   </ItemGroup>
 </Project>

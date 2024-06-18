@@ -1,6 +1,8 @@
 ﻿using Api.Application.Services.Contacts.Commands;
+using Api.Application.Services.Contacts.Queries;
 using Api.Application.Utils;
 using Api.Shared.ModelDTOs.Contacts.Commands;
+using Api.Shared.ModelDTOs.Contacts.Queries;
 using api_web_site_service.Controllers.Base;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -35,5 +37,12 @@ public class ContactController : BaseController
     public async Task<ApiResponse<DeleteContactResponse>> DeleteContact(DeleteContactRequest request, CancellationToken cancellationToken)
     {
         return ApiResponse<DeleteContactResponse>.Success(await _mediator.Send(new DeleteContactCommand(request, cancellationToken)));
+    }
+
+    [HttpGet]
+    [Route(nameof(GetAllContacts))]
+    public async Task<ApiResponse<List<GetAllContactsResponse>>> GetAllContacts(CancellationToken cancellationToken)
+    {
+        return ApiResponse<List<GetAllContactsResponse>>.Success(await _mediator.Send(new GetAllContactsCommand(cancellationToken)));
     }
 }

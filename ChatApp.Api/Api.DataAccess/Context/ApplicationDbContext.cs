@@ -1,6 +1,7 @@
 ﻿using Api.DataAccess.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace Api.DataAccess.Context;
 
@@ -19,6 +20,8 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplica
     public DbSet<Message> Messages { get; set; }
 
     #endregion
+
+    public IDbConnection Connection => Database.GetDbConnection();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

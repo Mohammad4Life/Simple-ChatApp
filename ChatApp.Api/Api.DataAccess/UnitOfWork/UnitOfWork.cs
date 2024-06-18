@@ -14,6 +14,8 @@ public interface IUnitOfWork : IDisposable
     IMessageRepository MessageRepository { get; }
     IProfilePhotoRepository ProfilePhotoRepository { get; }
     IRefreshTokenRepository RefreshTokenRepository { get; }
+    IApplicationReadDbConnection ApplicationReadDbConnection { get; }
+    IApplicationWriteDbConnection ApplicationWriteDbConnection { get; }
     Task<int> CommitAsync(CancellationToken cancellationToken);
 }
 
@@ -26,8 +28,11 @@ public class UnitOfWork : IUnitOfWork
     private readonly IMessageRepository _messageRepository;
     private readonly IProfilePhotoRepository _profilePhotoRepository;
     private readonly IRefreshTokenRepository _refreshTokenRepository;
+    private readonly IApplicationReadDbConnection _applicationReadDbConnection;
+    private readonly IApplicationWriteDbConnection _applicationWriteDbConnection;
     public UnitOfWork(IApplicationUserRepository applicationUserRepository, IContactRepository contactRepository, IConversationRepository conversationRepository,
-        IMessageRepository messageRepository, IProfilePhotoRepository profilePhotoRepository, IRefreshTokenRepository refreshTokenRepository, ApplicationDbContext context)
+        IMessageRepository messageRepository, IProfilePhotoRepository profilePhotoRepository, IRefreshTokenRepository refreshTokenRepository, ApplicationDbContext context,
+        IApplicationReadDbConnection applicationReadDbConnection, IApplicationWriteDbConnection applicationWriteDbConnection)
     {
         _applicationUserRepository = applicationUserRepository;
         _contactRepository = contactRepository;
@@ -35,6 +40,8 @@ public class UnitOfWork : IUnitOfWork
         _messageRepository = messageRepository;
         _profilePhotoRepository = profilePhotoRepository;
         _refreshTokenRepository = refreshTokenRepository;
+        _applicationReadDbConnection = applicationReadDbConnection;
+        _applicationWriteDbConnection = applicationWriteDbConnection;
         _context = context;
     }
 
@@ -51,6 +58,10 @@ public class UnitOfWork : IUnitOfWork
     public IProfilePhotoRepository ProfilePhotoRepository => _profilePhotoRepository;
 
     public IRefreshTokenRepository RefreshTokenRepository => _refreshTokenRepository;
+
+    public IApplicationReadDbConnection ApplicationReadDbConnection => _applicationReadDbConnection;
+
+    public IApplicationWriteDbConnection ApplicationWriteDbConnection => _applicationWriteDbConnection;
 
     public async Task<int> CommitAsync(CancellationToken cancellationToken)
     {

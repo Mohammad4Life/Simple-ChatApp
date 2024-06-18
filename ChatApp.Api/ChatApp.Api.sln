@@ -5,11 +5,13 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Api.Shared", "Api.Shared\Api.Shared.shproj", "{0A026BD8-467D-4B0F-8A4B-F2F6E70D6699}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.DataAccess", "Api.DataAccess\Api.DataAccess.csproj", "{621E3FCC-2FD6-4074-A903-4E4465E9A28D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.DataAccess", "Api.DataAccess\Api.DataAccess.csproj", "{621E3FCC-2FD6-4074-A903-4E4465E9A28D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Application", "Api.Application\Api.Application.csproj", "{06B99C9E-D29B-4006-994C-E223E73158FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Application", "Api.Application\Api.Application.csproj", "{06B99C9E-D29B-4006-994C-E223E73158FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api-web-site-service", "api-web-site-service\api-web-site-service.csproj", "{48FFAE14-A0A4-403F-A8FE-DED3B265568C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api-web-site-service", "api-web-site-service\api-web-site-service.csproj", "{48FFAE14-A0A4-403F-A8FE-DED3B265568C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StoredProcedures", "StoredProcedures", "{343BD5F7-0DDD-4681-AF63-540CA49DAFFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
