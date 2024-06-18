@@ -29,4 +29,18 @@ public class ApplicationUserController : BaseController
     {
         return ApiResponse<VerifyPhoneNumberResponse>.Success(await _mediator.Send(new VerifyPhoneNumberCommand(request, cancellationToken)));
     }
+
+    [HttpPost]
+    [Route(nameof(AddAccountDetails))]
+    public async Task<ApiResponse<AddAcountDetailsResponse>> AddAccountDetails(AddAcountDetailsRequest request, CancellationToken cancellationToken)
+    {
+        return ApiResponse<AddAcountDetailsResponse>.Success(await _mediator.Send(new AddAcountDetailsCommand(request, cancellationToken)));
+    }
+
+    [HttpPost]
+    [Route(nameof(CreateAccount))]
+    public async Task<ApiResponse<CreateAccountResponse>> CreateAccount(CreateAccountRequest request, CancellationToken cancellationToken)
+    {
+        return ApiResponse<CreateAccountResponse>.Success(await _mediator.Send(new CreateAccountCommand (request, cancellationToken)));
+    }
 }

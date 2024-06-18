@@ -1,6 +1,5 @@
 using Api.Application.ExtentionMethods;
 using Api.DataAccess.Context;
-using Api.DataAccess.DomainRepository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
