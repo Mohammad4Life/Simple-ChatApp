@@ -9,8 +9,8 @@ public class Conversation : BaseEntity
     public string UserId { get; set; }
     public ApplicationUser User { get; set; }
 
-    public int ContactId { get; set; }
-    public Contact Contact { get; set; }
+    public string RecieverId { get; set; }
+    public ApplicationUser Reciever { get; set; }
 
     public ICollection<Message>? Messages { get; set; }
 }
@@ -25,9 +25,9 @@ public class ConversationConfigurations : BaseEntityConfigurations<Conversation>
             .WithMany(x => x.Conversations)
             .HasForeignKey(x => x.UserId);
 
-        builder.HasOne(x => x.Contact)
+        builder.HasOne(x => x.Reciever)
             .WithMany(x => x.Conversations)
-            .HasForeignKey(x => x.ContactId)
+            .HasForeignKey(x => x.RecieverId)
             .OnDelete(DeleteBehavior.NoAction);
     }
 }

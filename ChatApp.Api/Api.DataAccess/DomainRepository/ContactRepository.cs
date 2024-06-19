@@ -10,6 +10,8 @@ namespace Api.DataAccess.DomainRepository;
 public interface IContactRepository : IRepository<Contact>
 {
     Task<bool> CheckDuplicate(Expression<Func<Contact, bool>> Predicate);
+
+    Task<string> GetUserIdByContactId(int ContactId);
 }
 public class ContactRepository : Repository<Contact>, IContactRepository
 {
@@ -22,5 +24,11 @@ public class ContactRepository : Repository<Contact>, IContactRepository
     public async Task<bool> CheckDuplicate(Expression<Func<Contact, bool>> Predicate)
     {
         return await _context.Contacts.AnyAsync(Predicate);
+    }
+
+    public async Task<string> GetUserIdByContactId(int ContactId)
+    {
+        var contact = await _context.Contacts.FirstOrDefaultAsync(x => x.Id == ContactId);
+        return contact.UserId;
     }
 }

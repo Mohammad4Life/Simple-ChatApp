@@ -9,8 +9,6 @@
     <Import_RootNamespace>Api.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)ModelDTOs\ApplicationUsers\Queries\" />
-    <Folder Include="$(MSBuildThisFileDirectory)ModelDTOs\Conversations\" />
     <Folder Include="$(MSBuildThisFileDirectory)ModelDTOs\Messages\" />
     <Folder Include="$(MSBuildThisFileDirectory)ModelDTOs\ProfilePhotos\" />
   </ItemGroup>
@@ -24,6 +22,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\ApplicationUsers\Commands\RegisterPhoneNumberResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\ApplicationUsers\Commands\VerifyPhoneNumberRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\ApplicationUsers\Commands\VerifyPhoneNumberResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\ApplicationUsers\Queries\GetByUserNameRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\ApplicationUsers\Queries\GetByUserNameResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\Contacts\Commands\AddNewContactRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\Contacts\Commands\AddNewContactResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\Contacts\Commands\DeleteContactRequest.cs" />
@@ -32,6 +32,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\Contacts\Commands\UpdateContactResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\Contacts\Queries\GetAllContactsRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\Contacts\Queries\GetAllContactsResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\Conversations\Commands\CreateConversationContactRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelDTOs\Conversations\Commands\CreateConversationContactResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\SmsProvider.cs" />
   </ItemGroup>
 </Project>

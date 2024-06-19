@@ -10,8 +10,4 @@
     <ProjectReference Include="..\Api.DataAccess\Api.DataAccess.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\ApplicationUsers\Queries\" />
-  </ItemGroup>
-
 </Project>
